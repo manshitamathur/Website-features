@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  position: relative;
+  min-height: 100vh;
+}
+.mdl-card__supporting-text {
+    width: 100% !important;
+    padding: 0;
+    height: 100%
+}
+.video-list-card {
+    background: white;
+    width: 280px;
+    height: 473px;
+    float: right;
+    padding: 0;
+   /* margin: 8px;*/
+    overflow-y: auto;
+    margin-top: 3%;
+    box-shadow: 0px 15px 15px 0px rgba(90, 116, 148, 0.3);
+}
+.mdl-video-table {
+    width: 100%;
+    border:none;
+}
+.mdl-video-table > tbody > tr > td > a{
+  font-family: 'Philosopher', sans-serif;
+  font-size: 18px;
+}
+.mdl-video-table > tbody > tr{
+  border-bottom: 2px solid #a6b6d570;
+}
+.mdl-video-table > tbody > tr:hover{
+    cursor: pointer;
+    background-color: #e9ecf2 !important;
+}
+.demo-card-wide.mdl-card {
+   /* width: calc(100% - 340px);
+    height: 100%;*/
+    margin-top: 3%;
+    margin-left: 20px;
+    box-shadow: 0px 15px 15px 0px rgba(90, 116, 148, 0.3);
+}
+.demo-card-wide  {
+    float: left;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #5b5b5b;
+    height: 10%;
+    background: #f1f7f4;
+    font-weight: 500;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 20px;
+    margin-left: 3px;
+}
+.videoContainer {
+  height: 65vh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.videoContainer .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 88, 130, 0.5);
+  position: absolute;
+  z-index: 999;
+}
+.videoContainer .overlay .bigPlayButton {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(https://goo.gl/68OJjZ);
+  background-size: 100% 100%;
+  transform: translate(-50%, calc(-50% - 30px));
+  cursor: pointer;
+  transition: width 0.2s, height 0.2s;
+}
+.videoContainer .overlay .bigPlayButton:hover {
+  width: 90px;
+  height: 90px;
+}
+
+.videoContainer .video {
+  width: 100%;
+  height: calc(100% - 60px);
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.videoContainer .video video { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.videoContainer .controls { 
+  width: 100%;
+  height: 60px;
+  background: #eef3f7;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2147483647;
+}
+.videoContainer .controls .controlButton { 
+  width: 70px;
+  height: 100%;
+  background: #eef3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: none;
+  color : black;
+}
+
+.videoContainer .controls .controlButton:hover {
+  background: #71829e;
+  color: #fff !important;
+}
+.videoContainer .controls .playButton > span{
+  font-size: 40px;
+}
+.videoContainer .controls .playButton > span:hover{
+  color: #fff !important;
+}
+
+.speedButton{ 
+  font-size: 21px;
+}
+ul.speedList { 
+    display: none;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    background-color: #eef3f7;
+    border-radius: 5px;
+    list-style: none;
+    -webkit-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s;
+    padding: 0px;
+    margin:0px;
+}
+ul.speedList li {
+    text-align: center;
+    font-family: 'verdana', tahoma , serif;
+    font-size: 13px;
+    padding: 5px 20px;
+    cursor: pointer;
+    display: block;
+    border-bottom: 1px solid #ccc;
+}
+ul.speedList li:last-child {
+    border-bottom: none;
+}
+ul.speedList li.selected {
+    background-color: #71829e;
+}
+
+.videoContainer .controls .progressContainer {
+  color: #eef3f7;
+  width: calc(100% - 100px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.videoContainer .controls .progressContainer .progressBar {
+  width: 100%;
+  height: 8px;
+  background: #d0d8e6;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.videoContainer .controls .progressContainer .progressBar:hover + .time {
+  opacity: 1;
+  transform: translateY(0);
+}
+.videoContainer .controls .progressContainer .progressBar .progress {
+  width: 10%;
+  height: 100%;
+  background: #a3b3ce;
+  border-radius: 20px;
+}
+.videoContainer .controls .progressContainer .timer {
+  margin: 0 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  font-weight: 300;
+  color: #71829e;
+  letter-spacing: 1px;
+}
+.videoContainer .controls .progressContainer .time {
+  width: 80px;
+  height: 25px;
+  background: #71829e;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.videoContainer .controls .progressContainer .time::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 25px;
+  left: 33px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #71829e;
+}
+.videoContainer .controls .volume {
+  width: 130px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.videoContainer .controls .volume .intensityBar {
+  width: 100px;
+  height: 4px;
+  background: #39a072;
+  border-radius: 20px;
+  max-width: 100px;
+  overflow: hidden;
+  transform-origin: right center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.videoContainer .controls .volume .intensityBar {
+  width: 100px;
+  height: 4px;
+  background: #d0d8e6;
+  border-radius: 20px;
+  max-width: 100px;
+  overflow: hidden;
+  transform-origin: right center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.videoContainer .controls .volume .intensityBar .intensity {
+  width: 50%;
+  height: 100%;
+  background: #a3b3ce;
+}
