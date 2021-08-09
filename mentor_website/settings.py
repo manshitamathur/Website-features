@@ -143,8 +143,8 @@ else:
      STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'rekhasadhwani1718@gmail.com'
-# EMAIL_HOST_PASSWORD = '121440121440@rs'
+# EMAIL_HOST_USER = '*************@gmail.com'
+# EMAIL_HOST_PASSWORD = '***********'
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
@@ -155,4 +155,4 @@ else:
 # MAILCHIMP_EMAIL_LIST_ID='e45cbcd893'
 
 SENDGRID_API_KEY = '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'
-FROM_EMAIL = 'rekhasadhwani1718@gmail.com'
+FROM_EMAIL = '*************@gmail.com'
